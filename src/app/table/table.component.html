@@ -1,1 +1,23 @@
-<p>table works!</p>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Employee ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees;">
+        <td>{{employee.id}}</td>
+        <td>{{employee.first_name}}</td>
+        <td>{{employee.second_name}}</td>
+        <td>{{employee.eid}}</td>
+        <td><button>Delete</button><button>Edit</button></td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
