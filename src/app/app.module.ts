@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
@@ -18,7 +18,8 @@ import { MatDividerModule } from '@angular/material/divider';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

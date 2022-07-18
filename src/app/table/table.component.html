@@ -1,7 +1,10 @@
 <h3>Search by:</h3>
-<button id="search-submit" type = "submit">Search</button>
-<input placeholder="Name">
-<h3>Employees with Name:</h3>
+  <form [formGroup]="form" (ngSubmit)="search(form.value.firstName)">
+  <button id="search-submit" type="submit">Search</button>
+  <input id="fname_input" formControlName="firstName" type="text" />
+</form>
+<br>
+<h3>Employees with Name: {{firstName}}</h3>
 <div>
   <table>
     <thead>
@@ -15,7 +18,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let employee of employees;">
-        <td class = "id_num">{{employee.id_number}}</td>
+        <td class="id_num">{{employee.id_number}}</td>
         <td>{{employee.first_name}}</td>
         <td>{{employee.second_name}}</td>
         <td>{{employee.eid}}</td>

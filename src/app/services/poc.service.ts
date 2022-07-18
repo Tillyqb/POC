@@ -12,9 +12,7 @@ export class POCService {
   constructor() {}
   public async getAllEmployees() {
     const res = await axios.get(this.ENDPOINT);
-    console.log(res);
     this.employees = res.data;
-    console.log(this.employees);
     return this.employees;
   }
 
