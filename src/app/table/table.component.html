@@ -1,7 +1,11 @@
+<h3>Search by:</h3>
+<button id="search-submit" type = "submit">Search</button>
+<input placeholder="Name">
+<h3>Employees with Name:</h3>
 <div>
   <table>
     <thead>
-      <tr>
+      <tr id="table_header">
         <th>id</th>
         <th>First Name</th>
         <th>Second Name</th>
@@ -11,12 +15,11 @@
     </thead>
     <tbody>
       <tr *ngFor="let employee of employees;">
-        <td>{{employee.id}}</td>
+        <td class = "id_num">{{employee.id_number}}</td>
         <td>{{employee.first_name}}</td>
         <td>{{employee.second_name}}</td>
         <td>{{employee.eid}}</td>
         <td><button>Delete</button><button>Edit</button></td>
-
       </tr>
     </tbody>
   </table>
