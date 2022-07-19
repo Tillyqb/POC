@@ -37,6 +37,9 @@ export class TableComponent implements OnInit {
           this.employees.push(employee);
         });
       });
-    console.log(this.employees);
   };
+
+  public async delete(eid:string) { 
+    await this.pocService.deleteEmployeeByEID(eid)
+  }
 }

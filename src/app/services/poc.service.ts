@@ -17,15 +17,40 @@ export class POCService {
   }
 
   public async getEmployeeByFirstName(firstName: string): Promise<Employee[]> {
-    const employeeList: Employee[] = await this.getAllEmployees();
+    let employeeList: Employee[] = await this.getAllEmployees();
     if (firstName == "") {
+      employeeList.sort((a, b) => {
+        if (a.id_number > b.id_number) {
+          return 1;
+        }
+        if (a.id_number < b.id_number) {
+          return -1;
+        }
+        return 0;
+      });
       return employeeList;
     } else {
       let result: Employee[] = [];
       for (let employee of employeeList) {
         employee.first_name == firstName ? result.push(employee) : null;
       }
+      result.sort((a, b) => {
+        if (a.id_number > b.id_number) {
+          return 1;
+        }
+        if (a.id_number < b.id_number) {
+          return -1;
+        }
+        return 0;
+      });
       return result;
     }
+  }
+
+  public async deleteEmployeeByEID(eid: string) {
+    const reqUrl: string = this.ENDPOINT + "deleteByEid/" + eid;
+    try {
+      axios.delete(reqUrl);
+    } catch (error) {}
   }
 }

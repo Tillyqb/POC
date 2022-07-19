@@ -13,4 +13,9 @@ describe("POCServiceService", () => {
   it("should be created", () => {
     expect(service).toBeTruthy();
   });
+
+  it("getAllEmployees should return a list of employees", async () => { 
+    const employees = await service.getAllEmployees();
+    expect(employees.length).toBeGreaterThan(0);
+  })
 });
